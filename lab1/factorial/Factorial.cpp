@@ -3,21 +3,28 @@
 //
 #include "Factorial.h"
 
-int factorial(int value) {
+
+bool OutOfRange(int value);
+
+int Zmiana(int value) {
 //  if (value<0){
 //    return 0;
 //  }
 //  else
-  if (value > 12){
+  if (OutOfRange(value))
+  {
     return 0;
   }
   else if (value==0) {
     return 1;
   }
   else if (value>0){
-    return value * factorial(value - 1);
+    return value * Zmiana(value - 1);
   }
   else if (value<0){
-    return value * factorial(value + 1);
+    return value * Zmiana(value + 1);
   }
 }
+
+bool OutOfRange(int value) { return value > 12 || value < -12; }
+
