@@ -4,14 +4,21 @@
 #include <iostream>
 #include "Array2D.h"
 
-int rows;
-int cols;
-
+int a=5;
+int b=7;
 int main() {
-    std::cout << "podaj wymiary macierzy " << std::endl;
-    std::cin>> rows >> std::endl;
-    std::cin>> cols >> std::endl;
 
+    int ** tab;
+    tab = Array2D(a,b);
 
+    for (int i = 0; i < a; ++i) {
+        for (int j = 0; j < b; ++j) {
+            std::cout<<tab[i][j]<<std::endl;
+
+        }
+    }
+
+    DeleteArray2D(tab, a, b);
 
     return 0;
+}

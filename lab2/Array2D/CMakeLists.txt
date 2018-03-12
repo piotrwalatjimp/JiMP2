@@ -1,7 +1,11 @@
-project(lab2)
+project(array2d)
 
-add_subdirectory_if_exists(array2d)
-add_subdirectory_if_exists(polybius)
-add_subdirectory_if_exists(greatestproduct)
-add_subdirectory_if_exists(simpleforwardlist)
-add_subdirectory_if_exists(xorcypherbreaker)
+set(HEDEAR_FILES Array2D.h)
+set(SOURCE_FILES Array2D.cpp)
+
+add_library(libarray2d STATIC ${SOURCE_FILES})
+target_include_directories(libarray2d PUBLIC .)
+
+add_executable(array2d ${SOURCE_FILES} main.cpp ../simpleforwardlist/simpleforwardlist.cpp ../simpleforwardlist/simpleforwardlist.h ../simpleforwardlist/main.cpp ../xorcypherbreaker/xorcypherbreaker.cpp ../xorcypherbreaker/xorcypherbreaker.h ../xorcypherbreaker/main.cpp)
+
+target_link_libraries(array2d libarray2d)
