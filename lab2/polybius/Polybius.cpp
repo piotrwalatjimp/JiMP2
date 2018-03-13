@@ -2,7 +2,7 @@
 // Created by Piotrek on 12.03.2018.
 //
 
-#include "polybius.h"
+#include "Polybius.h"
 
 std::string PolybiusDecrypt(std::string message){
 

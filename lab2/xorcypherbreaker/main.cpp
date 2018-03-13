@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "xorcypherbreaker.h"
+#include "XorCypherBreaker.h"
 
 int main()
 {

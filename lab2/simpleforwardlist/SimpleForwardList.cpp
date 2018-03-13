@@ -2,7 +2,7 @@
 // Created by Piotrek on 12.03.2018.
 //
 
-#include "simpleforwardlist.h"
+#include "SimpleForwardList.h"
 
 ForwardList *CreateNode(int value) {
 

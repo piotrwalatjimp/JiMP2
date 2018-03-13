@@ -5,7 +5,7 @@
 #include <iostream>
 #include <cstring>
 #include <algorithm>
-#include "xorcypherbreaker.h"
+#include "XorCypherBreaker.h"
 
 std::string
 XorCypherBreaker(const std::vector<char> &cryptogram, int key_length, const std::vector<std::string> &dictionary) {
