@@ -18,18 +18,24 @@ namespace algebra {
         complex<double> ** macierz;
         int n;
         int m;
+
     public:
         Matrix(int, int);
         Matrix();
         Matrix(std::string);
+        Matrix(std::initializer_list<std::vector<std::complex<double>>> matrix_list);
         Matrix(Matrix &matrix);
         ~Matrix();
-        void print(const Matrix);
-        void add(const Matrix &other);
-        void sub(const Matrix &other);
-        void mul(const Matrix &other);
-        void div(const Matrix &other);
-        void pow(const Matrix &other);
+        pair<size_t, size_t> Size();
+        Matrix Add(Matrix matrix);
+        Matrix Sub(Matrix matrix);
+        Matrix Mul(Matrix matrix);
+//        Matrix Mul(complex<double> number);
+        Matrix Pow(int number);
+        int getWidth();
+        int getHeight();
+        complex<double> ** getMatrix();
+        std::string Print();
     };
 }
 
