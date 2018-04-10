@@ -9,7 +9,7 @@
 #include <vector>
 #include <utility>
 #include <MemLeakTest.h>
-#include "Matrix.h"
+#include <Matrix.h>
 
 using ::algebra::Matrix;
 using ::std::make_unique;

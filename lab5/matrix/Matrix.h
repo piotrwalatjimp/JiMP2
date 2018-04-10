@@ -30,7 +30,7 @@ namespace algebra {
         Matrix Add(Matrix matrix);
         Matrix Sub(Matrix matrix);
         Matrix Mul(Matrix matrix);
-//        Matrix Mul(complex<double> number);
+        Matrix Mul(complex<double> number);
         Matrix Pow(int number);
         int getWidth();
         int getHeight();
