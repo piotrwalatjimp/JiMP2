@@ -2,39 +2,42 @@
 // Created by walapiot on 13.03.18.
 //
 
-
 #include "MinimalTimeDifference.h"
 
-unsigned int ToMinutes(std::string time_HH_MM){
-    string time_HH_string, time_MM_string;
-    int time_HH, time_MM;
-    unsigned int result_minutes;
-
-    if( time_HH_MM[2]==':'){
-        time_HH_string = time_HH_MM.substr(0,2);
-        time_MM_string = time_HH_MM.substr(3,5);
+namespace minimaltimedifference
+{
+    unsigned int ToMinutes(std::string time_HH_MM)
+    {
+        unsigned int minutes=0;
+        size_t pos;
+        minutes+=(60*stoi(time_HH_MM,&pos,10));
+        std::string time_MM = time_HH_MM.substr(pos+1,std::string::npos);
+        minutes+=(stoi(time_MM,nullptr,10));
+        return minutes;
     }
-    if(time_HH_MM[1]==':'){
-        time_HH_string = time_HH_MM.substr(0,1);
-        time_MM_string = time_HH_MM.substr(2,4);
-    }
-    else{
-        std::cout<< "Podaj godzine w formacie HH:MM lub H:MM" <<std::endl<<std::endl;
 
-    }
-    istringstream string_to_int_HH(time_HH_string);
-    string_to_int_HH >> time_HH;
-
-    istringstream string_to_int_MM(time_MM_string);
-    string_to_int_MM >> time_MM;
-
-    result_minutes=time_HH*60+time_MM;
-    if(result_minutes == 0) {
-        result_minutes = 666;
+    unsigned int MinimalTimeDifference(std::vector<std::string> times)
+    {
+        unsigned int tmp1, tmp2, minimal=1440;
+        for(int i=0; i<times.size()-1; i++)
+        {
+            tmp1=ToMinutes(times[i]);
+            for(int j=i+1; j<times.size(); j++)
+            {
+                tmp2=ToMinutes(times[j]);
+                if(abs(tmp1-tmp2)<=12*60)
+                {
+                    tmp2=abs(tmp1-tmp2);
+                }
+                else
+                {
+                    tmp2=24*60-abs(tmp1-tmp2);
+                }
+                if(tmp2<minimal)
+                    minimal=tmp2;
+            }
+        }
+        return minimal;
     }
 }
 
-unsigned int MinimalTimeDifference(std::vector<std::string> times){
-    unsigned int first_time, second_time;
-
-}

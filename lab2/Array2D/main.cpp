@@ -4,12 +4,12 @@
 #include <iostream>
 #include "Array2D.h"
 
-int a=5;
-int b=7;
+//int a=5;
+//int b=7;
 int main() {
-
+    cin>>a>>b;
     int ** tab;
-    tab = Array2D(a,b);
+    FillArray2D(a,b);
 
     for (int i = 0; i < a; ++i) {
         for (int j = 0; j < b; ++j) {
