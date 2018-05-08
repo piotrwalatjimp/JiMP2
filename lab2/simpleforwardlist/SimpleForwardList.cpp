@@ -6,21 +6,31 @@
 
 ForwardList *CreateNode(int value) {
 
-    auto new_node = new ForwardList;
+    ForwardList *new_node;
+    new_node= (ForwardList*) malloc(sizeof(ForwardList));
     new_node->value = value;
+    new_node->next = nullptr;
+
 
     return new_node;
 }
 
 void DestroyList(ForwardList *list) {
 
-    if(list)
-    {
-        ForwardList *nextToDelete = list->next;
-        delete list;
-        DestroyList(nextToDelete);
+
+    ForwardList *n=list->next, *j= list;
+    while(j->next!= nullptr){
+        while (n->next!= nullptr){
+            j=j->next;
+            n=n->next;
+        }
+        j->next=nullptr;
+        free(j);
+        j=list;
     }
 
+    free(j);
+    free(list);
 
 
 
@@ -28,30 +38,19 @@ void DestroyList(ForwardList *list) {
 
 ForwardList *PushFront(ForwardList *list, int value) {
 
-    if(list)
-    {
-        ForwardList *new_node = CreateNode(value);
-        new_node->next = list;
+    ForwardList *new_node;
+    new_node=(ForwardList *) malloc(sizeof(ForwardList));
+    new_node->next = list;
+    new_node->value=value;
+    return new_node;
 
-        return new_node;
-    }
-    else return nullptr;
 }
 
 void Append(ForwardList *list, ForwardList *tail) {
 
-    if(list)
-    {
-        auto current = list;
-        ForwardList *prev = nullptr;
-
-        while(current) {
-            prev = current;
-            current = current->next;
-
-        }
-
-        prev->next = tail;
-    }
+    while(list!=nullptr)
+        list=list->next;
+    list->next=tail;
+    tail->next=nullptr;
 
 }

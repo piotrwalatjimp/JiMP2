@@ -1,3 +1,4 @@
+
 //
 // Created by mwypych on 10.04.17.
 //
@@ -16,30 +17,30 @@ using ::std::make_unique;
 
 
 class IterableTests : public ::testing::Test, MemLeakTest {
- public:
+public:
 };
 
 class TestIterator : public IterableIterator {
 public:
     std::pair<int, std::string> Dereference() const override {
-      return std::make_pair(44,"moje imie");
+        return std::make_pair(44,"moje imie");
     }
 
     IterableIterator &Next() override {
-      return *this;
+        return *this;
     }
 
     bool NotEquals(const std::unique_ptr<IterableIterator> &other) const override {
-      return false;
+        return false;
     }
 };
 
 TEST_F(IterableTests, ThereIsIterableIteratorBaseClass) {
-  std::unique_ptr<IterableIterator> test_it = std::make_unique<TestIterator>();
-  std::pair<int, std::string> expected_value {44, "moje imie"};
-  EXPECT_EQ(expected_value, test_it->Dereference());
-  EXPECT_EQ(test_it->Dereference(), test_it->Next().Dereference());
-  EXPECT_FALSE(test_it->NotEquals(test_it));
+    std::unique_ptr<IterableIterator> test_it = std::make_unique<TestIterator>();
+    std::pair<int, std::string> expected_value {44, "moje imie"};
+    EXPECT_EQ(expected_value, test_it->Dereference());
+    EXPECT_EQ(test_it->Dereference(), test_it->Next().Dereference());
+    EXPECT_FALSE(test_it->NotEquals(test_it));
 }
 
 //TEST_F(IterableTests, ThereIsIterableIteratorWrapperClass) {

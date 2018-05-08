@@ -2,11 +2,16 @@
 // Created by Piotrek on 12.03.2018.
 //
 
-#include <iostream>
-#include <fstream>
-#include <iomanip>
+
 #include "Polybius.h"
-
-int main(int argc, char* argv[]){
-
+using namespace std;
+int main()
+{
+    string word, code;
+    cin>>word;
+    code=PolybiusCrypt(word);
+    cout<<code<<endl;
+    word=PolybiusDecrypt(code);
+    cout<<word
+    return 0;
 }

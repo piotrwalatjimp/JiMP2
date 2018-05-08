@@ -18,7 +18,7 @@ using ::std::make_unique;
 
 
 class IterableTests : public ::testing::Test, MemLeakTest {
- public:
+public:
 };
 
 TEST_F(IterableTests, ImplementsZipperIterator) {

@@ -6,8 +6,12 @@
 #define JIMP_EXERCISES_POLYBIUS_H
 
 #include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+string PolybiusCrypt(string message);
+string PolybiusDecrypt(string crypted);
 
-std::string PolybiusCrypt(std::string message);
-std::string PolybiusDecrypt(std::string crypted);
-
+extern const char polybius_tab[5][5];
 #endif //JIMP_EXERCISES_POLYBIUS_H
+

@@ -13,6 +13,7 @@
 
 using std::experimental::string_view;
 
+
 namespace pool {
     class TextPool {
     protected:
