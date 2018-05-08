@@ -10,7 +10,7 @@ set(REVERSE_STRING_SRC ReverseStringTest.cpp)
 set(PALINDROME_SRC PalindromeTest.cpp)
 set(MULTIPLICATION_TABLE_SRC MultiplicationTableTest.cpp)
 set(DOUBLE_BASE_PALINDROME_SRC DoubleBasePalindromeTest.cpp)
-set(SOURCE_FILES ${FACTORIAL_SRC} ${REVERSE_STRING_SRC} ${PALINDROME_SRC} ${MULTIPLICATION_TABLE_SRC} ${DOUBLE_BASE_PALINDROME_SRC} ../../lab2/Array2D/Array2D.h ../../lab2/Array2D/Array2D.cpp ../../lab2/Array2D/main.cpp ../../lab2/polybius/Polybius.cpp ../../lab2/polybius/Polybius.h ../../lab2/polybius/main.cpp)
+set(SOURCE_FILES ${FACTORIAL_SRC} ${REVERSE_STRING_SRC} ${PALINDROME_SRC} ${MULTIPLICATION_TABLE_SRC} ${DOUBLE_BASE_PALINDROME_SRC} ../../lab2/array2d/Array2D.h ../../lab2/array2d/Array2D.cpp ../../lab2/array2d/main.cpp ../../lab2/polybius/Polybius.cpp ../../lab2/polybius/Polybius.h ../../lab2/polybius/main.cpp)
 
 set(GTEST_LIBS gtest gtest_main gmock gmock_main)
 
